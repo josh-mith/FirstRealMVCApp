@@ -1,21 +1,23 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico"/>
+    <link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico" />
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
     <div class="vertical-menu">
         <a asp-action="Index">Home</a>
-        <a asp-action="MyPodcasts">My Podcasts</a>
-        <a asp-action="MovieSubmission">Submit a Movie!</a>
-        <a asp-action="MovieList">Movie List</a>
+        <a asp-action="Guidelines">Guidelines</a>
+        <a asp-action="Create">Submit a Movie!</a>
     </div>
-    <h1>@ViewBag.Title</h1>
+    <h1 class="row justify-content-center">@ViewBag.Title</h1>
 
     @RenderBody()
 
     <br />
     <br />
+    @RenderSection("scripts", false)
 </body>
 
 </html>

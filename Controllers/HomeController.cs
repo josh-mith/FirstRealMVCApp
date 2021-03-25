@@ -13,9 +13,17 @@ namespace Assignment3.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        private IMovieRepository _repository;
+
+        public HomeController(ILogger<HomeController> logger, IMovieRepository repository)
         {
             _logger = logger;
+            _repository = repository;
+        }
+
+        public IActionResult MovieList()
+        {
+            return View(TempStorage.Submissions.Where(submission => submission.Title != "Independence Day"));
         }
 
         public IActionResult Index()
@@ -33,10 +41,6 @@ namespace Assignment3.Controllers
         {
             TempStorage.AddSubmission(movieResponse); 
             return View("Confirmation", movieResponse);
-        }
-        public IActionResult MovieList()
-        {
-            return View(TempStorage.Submissions.Where(submission => submission.Title != "Independence Day"));
         }
 
         public IActionResult MyPodcasts()
