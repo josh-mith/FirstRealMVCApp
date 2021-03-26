@@ -53,12 +53,14 @@ namespace Assignment3
 
             app.UseAuthorization();
 
+            //Changed the endpoints to point to the MovieResponses scaffolded controller
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=MovieResponses}/{action=Index}/{id?}");
             });
+
             //Seed all the data
             SeedData.EnsurePopulated(app);
 

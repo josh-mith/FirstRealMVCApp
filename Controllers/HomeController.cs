@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
+//This controller isn't really used. It contains everything from the old website.
 namespace Assignment3.Controllers
 {
     public class HomeController : Controller

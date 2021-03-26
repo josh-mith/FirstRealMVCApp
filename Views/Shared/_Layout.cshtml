@@ -6,11 +6,29 @@
     <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="vertical-menu">
-        <a asp-action="Index">Home</a>
-        <a asp-action="Guidelines">Guidelines</a>
-        <a asp-action="Create">Submit a Movie!</a>
-    </div>
+    <header>
+        <!--This is my big, beautiful navbar-->
+        <nav class="navbar navbar-expand-xl navbar-dark bg-primary">
+            <a class="navbar-brand" asp-action="Index">Movie Collection</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" asp-action="Index">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" asp-action="Create">
+                            Submit a Movie
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
     <h1 class="row justify-content-center">@ViewBag.Title</h1>
 
     @RenderBody()

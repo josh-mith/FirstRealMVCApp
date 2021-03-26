@@ -1,12 +1,12 @@
 ﻿@model Assignment3.Models.MovieResponse
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Movie Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<!--Display details about the movie user selects-->
 <div class="row justify-content-center">
-    <h4>MovieResponse</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -59,7 +59,7 @@
         </dd>
     </dl>
 </div>
-<div>
+<div class="justify-content-center">
     <a asp-action="Edit" asp-route-id="@Model.MovieID">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>
